@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+    <style>
+        /* .......................navbar............................ */
+         .navbar-btn{
+            display: inline-block;
+            margin: 15px 20px 15px 20px;
+            
+        }
+        .navbar-btn a{
+            text-decoration: none;
+            color: black;
+        }
+        #navbar ul{
+            /* background-color: aqua; */
+            box-shadow: 0 8px 16px 0 rgb(6, 6, 6);
+            text-align: right;
+        }
+        /* ........................navbar.............................. */
+    </style>
+</head>
+
+<body>
+    <div>
+        <!-- ..........navbar............................ -->
+        <div id="navbar">
+            <ul>
+                <li class="navbar-btn"><a href="./index.html">Home</a></li>
+                <li class="navbar-btn"><a href="./product.html">Products</a></li>
+                <li class="navbar-btn"><a href="./contact.html">Contact us</a></li>
+                <li class="navbar-btn"><a href="./login.html">Login</a></li>
+                <li class="navbar-btn"><a href="./registration.html">Sign up</a></li>
+            </ul>
+        </div>
+        <!-- ............navbar................................ -->
+        <table>
+            <tr>
+                <th colspan="2">Login:</th>
+            </tr>
+            <tr>
+                <td>Username/Email:</td>
+                <td><input type="email" placeholder="enter your email here" name="email" /></td>
+            </tr>
+            <tr>
+                <td>Password:</td>
+                <td><input type="password" placeholder="enter your password here" name="password" /></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><input type="button" value="login"/></td>
+            </tr>
+            <tr>
+                <td>If you are not registered, then <a href="registration.html">Sign up</a></td>
+            </tr>
+        </table>
+    </div>
+</body>
+
+</html>
