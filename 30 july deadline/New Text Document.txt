@@ -1,0 +1,21 @@
+[12:22 PM, 7/25/2022] Ismail Techna: Only in html
+Create a simple website for a shopping store.
+1) Pages:
+a) Home Page
+b) Contact Page
+c) Login Page
+d) Registration Page
+e) Products Page
+2) Home Page should have a menu which should be linked to all pages
+3) Contact Page should have a simple contact form.
+4) Login Page and Registration should have link to each other.
+5) Registration Form should have 3 sections and formatted properly:
+a) Login info -> Username, Email and Password
+b) Personal info -> Name, Gender, City, Hobbies
+c) Shipping info -> Address, City, Postal Code
+6) Products Page should have three types of items displayed separated by horizontal rule <hr>.
+a) Sports
+b) Garments
+c) Electronics
+7) Products should have sub pages of sports, garments and electronics linked properly.
+[12:22 PM, 7/25/2022] Ismail Techna: Deadline is 30 july

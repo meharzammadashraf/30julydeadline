@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <style>
+        /* .................Slider........................................................................... */
+        html,
+        body {
+            height: 100%;
+            margin: 0px;
+        }
+
+        .slider {
+            width: 100%;
+            /* max-width: 600px; */
+            height: 400px;
+            /* margin: 20px; */
+            text-align: center;
+            border-radius: 20px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .slides {
+            display: flex;
+            overflow-x: scroll;
+            position: relative;
+            scroll-behavior: smooth;
+            scroll-snap-type: x mandatory;
+        }
+
+        .slide:nth-of-type(even) {
+            background-color: rgb(250, 246, 212);
+        }
+
+        .slide {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-shrink: 0;
+            width: 100%;
+            height: 400px;
+            scroll-snap-align: center;
+            margin-right: 0px;
+            box-sizing: border-box;
+            background: white;
+            transform-origin: center center;
+            transform: scale(1);
+        }
+
+        .slide__text {
+            font-size: 40px;
+            font-weight: bold;
+            font-family: sans-serif;
+        }
+
+        .slide a {
+            background: none;
+            border: none;
+        }
+
+        a.slide__prev,
+        .slider::before {
+            transform: rotate(135deg);
+            -webkit-transform: rotate(135deg);
+            left: 5%;
+        }
+
+        a.slide__next,
+        .slider::after {
+            transform: rotate(-45deg);
+            -webkit-transform: rotate(-45deg);
+            right: 5%;
+        }
+
+        .slider::before,
+        .slider::after,
+        .slide__prev,
+        .slide__next {
+            position: absolute;
+            top: 48%;
+            width: 35px;
+            height: 35px;
+            border: solid black;
+            border-width: 0 4px 4px 0;
+            padding: 3px;
+            box-sizing: border-box;
+        }
+
+        .slider::before,
+        .slider::after {
+            content: "";
+            z-index: 1;
+            background: none;
+            pointer-events: none;
+        }
+
+        .slider__nav {
+            box-sizing: border-box;
+            position: absolute;
+            bottom: 5%;
+            left: 50%;
+            width: 200px;
+            margin-left: -100px;
+            text-align: center;
+        }
+
+        .slider__navlink {
+            display: inline-block;
+            height: 15px;
+            width: 15px;
+            border-radius: 50%;
+            background-color: black;
+            margin: 0 10px 0 10px;
+        }
+
+        .read-article {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            z-index: 999;
+            color: #000;
+            background: white;
+            padding: 10px 20px;
+            border-radius: 10px;
+            font-family: arial;
+            text-decoration: none;
+            box-shadow: rgb(50 50 93 / 25%) 0 0 100px -20px, rgb(0 0 0 / 30%) 0 0 60px -15px;
+        }
+
+        .read-article:hover {
+            background: #d5d5d5;
+            box-shadow: rgb(50 50 93 / 25%) 0 0 100px -20px, rgb(0 0 0 / 30%) 0 0 60px 0px;
+        }
+
+        iframe[sandbox] .read-article {
+            display: none;
+        }
+
+        /* ..................Slider............................................................................ */
+        /* ....................product........................... */
+        .allproduct {
+            display: inline-block;
+            margin-right: 80px;
+        }
+
+        .card {
+            box-shadow: 0 4px 8px 0 rgba(6, 6, 6, 0.613);
+            transition: 0.3s;
+            width: 18.99%;
+            display: inline-block;
+            padding: 5px;
+        }
+        .card img{
+            height: 150px;
+        }
+
+        .card:hover {
+            box-shadow: 0 8px 16px 0 rgb(6, 6, 6);
+        }
+
+        .container {
+            padding: 2px 16px;
+        }
+
+        /* ..................... */
+        .btn-last-pyjo-aana input {
+            border: none;
+            margin: 10px 0px 10px 0px;
+            padding: 10px;
+            font-size: 15px;
+            box-shadow: 0 4px 8px 0 rgb(40, 45, 45);
+            margin-left: 46%;
+        }
+
+        .btn-last-pyjo-aana input:hover {
+            box-shadow: 0 8px 16px 0 rgb(6, 6, 6);
+        }
+        #products-navbar li{
+            margin: 20px;
+        }
+        /* ............................. */
+        .section-heading {
+            box-shadow: 0 3px 3px 0 rgb(6, 6, 6);
+            padding: 15px 0px 15px 10px;
+            font-size: larger;
+        }
+
+        /* ............................. */
+        .cart-btn {
+            /* background-color: aqua; */
+            box-shadow: 0 3px 3px 0 rgba(241, 104, 36, 0.834);
+            padding: 10px 0px;
+            width: 100%;
+            border: none;
+            background-color: rgba(179, 184, 182, 0.398);
+        }
+
+        .cart-btn:hover {
+            box-shadow: 0 3px 3px 0 rgb(6, 6, 6);
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+        }
+
+        /* .................................. */
+        .description {
+            text-align: center;
+        }
+
+        .allproduct:active {
+            color: red;
+        }
+
+        /* ......................product............................ */
+        #navbar {
+            position: sticky;
+            top: 0;
+        }
+
+        .navbar-btn {
+            display: inline-block;
+            margin: 20px 20px 15px 20px;
+
+        }
+
+        .navbar-btn a {
+            text-decoration: none;
+            color: black;
+        }
+
+        #navbar ul {
+            box-shadow: 0 8px 16px 0 rgb(6, 6, 6);
+            text-align: right;
+        }
+
+        #navbar-logo {
+            display: inline-block;
+            margin-right: 45%;
+        }
+
+        #navbar-logo a img {
+            height: 50px;
+            margin-bottom: -20px;
+        }
+        /* .....................footer........................................ */
+        #footer-portion-1{
+            padding: 10px 40px 5px 40px;
+            box-shadow: 0 2px 2px 0 rgb(40, 45, 45);
+        }
+        #footer-portion-2{
+            box-shadow: 0 4px 8px 0 rgb(40, 45, 45);
+            padding: 5px 0px 5px 150px;
+        }
+        .footer-ul{
+            list-style: none;
+        }
+        .footer-ul a{
+            text-decoration: none;
+            color: black;
+            line-height: 37px;
+        }
+        #footer-div-1, #footer-div-2, #footer-div-3{
+            display: inline-block;
+            width: 32%;
+        }
+        #footer-div-3 p{
+            text-align: justify;
+        }
+        /* .....................footer........................................ */
+    </style>
+</head>
+
+<body>
+    <div id="navbar">
+        <ul>
+            <li id="navbar-logo"><a href="./index.html"><img src="./images/logo.png" /></a></li>
+            <li class="navbar-btn"><a href="./index.html">Home</a></li>
+            <li class="navbar-btn"><a href="#index-products">Products</a></li>
+            <li class="navbar-btn"><a href="contact.html">Contact us</a></li>
+            <li class="navbar-btn"><a href="login.html">Login</a></li>
+            <li class="navbar-btn"><a href="registration.html">Sign up</a></li>
+        </ul>
+    </div>
+    <!-- .....................Slider............................................................. -->
+    <div class="slider">
+        <div class="slides">
+            <div id="slides__1" class="slide">
+                <span class="slide__text"><img src="./images/a.jpg" /></span>
+                <a class="slide__prev" href="#slides__4" title="Next"></a>
+                <a class="slide__next" href="#slides__2" title="Next"></a>
+            </div>
+            <div id="slides__2" class="slide">
+                <span class="slide__text"><img src="./images/a.jpg" /></span>
+                <a class="slide__prev" href="#slides__1" title="Prev"></a>
+                <a class="slide__next" href="#slides__3" title="Next"></a>
+            </div>
+            <div id="slides__3" class="slide">
+                <span class="slide__text"><img src="./images/a.jpg" /></span>
+                <a class="slide__prev" href="#slides__2" title="Prev"></a>
+                <a class="slide__next" href="#slides__4" title="Next"></a>
+            </div>
+            <div id="slides__4" class="slide">
+                <span class="slide__text"><img src="./images/a.jpg" /></span>
+                <a class="slide__prev" href="#slides__3" title="Prev"></a>
+                <a class="slide__next" href="#slides__1" title="Prev"></a>
+            </div>
+        </div>
+        <!-- <div class="slider__nav">
+          <a class="slider__navlink" href="#slides__1"></a>
+          <a class="slider__navlink" href="#slides__2"></a>
+          <a class="slider__navlink" href="#slides__3"></a>
+          <a class="slider__navlink" href="#slides__4"></a>
+        </div> -->
+    </div>
+    <!-- ......................Slider............................................................ -->
+    <!-- .................Product......................... -->
+    <h1 id="index-products">Product Overview</h1>
+    <ul id="products-navbar">
+        <li class="allproduct"><a href="#">All Products</a></li>
+        <li class="allproduct"><a href="#sports">Sports</a></li>
+        <li class="allproduct"><a href="#garments">Garments</a></li>
+        <li class="allproduct"><a href="#electronics">Electronics</a></li>
+    </ul>
+    <div>
+        <div>
+            <div class="card">
+                <img src="./images/1.jpeg" alt="Avatar" style="width:100%">
+                <div class="container">
+                    <h4 class="description"><b>Product name...</b></h4>
+                    <!-- <a class="cart-btn" href="#"><p>Add to cart</p></a> -->
+                    <button class="cart-btn">Add to cart</button>
+                    <!-- <button class="cart-btn">Add to cart</button> -->
+                </div>
+            </div>
+            <div class="card">
+                <img src="./images/2.jpeg" alt="Avatar" style="width:100%">
+                <div class="container">
+                    <h4 class="description"><b>Product name...</b></h4>
+                    <button class="cart-btn">Add to cart</button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="./images/12.jpeg" alt="Avatar" style="width:100%">
+                <div class="container">
+                    <h4 class="description"><b>Product name...</b></h4>
+                    <button class="cart-btn">Add to cart</button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="./images/9.jpeg" alt="Avatar" style="width:100%">
+                <div class="container">
+                    <h4 class="description"><b>Product name...</b></h4>
+                    <button class="cart-btn">Add to cart</button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="./images/10.jpeg" alt="Avatar" style="width:100%">
+                <div class="container">
+                    <h4 class="description"><b>Product name...</b></h4>
+                    <button class="cart-btn">Add to cart</button>
+                </div>
+            </div>
+            <!-- .............................. -->
+            <div class="btn-last-pyjo-aana">
+                <a href="./product.html"><input type="button" value="Load More" /></a>
+            </div>
+            <!-- ............................... -->
+        </div>
+    </div>
+    <!-- ....................Product.................... -->
+    <!-- .......................footer.................................... -->
+    <div>
+        <div id="footer-portion-1">
+            <div id="footer-div-1">
+                <ul class="footer-ul">
+                    <li><h4>CATEGORIES</h4></li>
+                    <li><a href="./products/sports.html">Sports</a></li>
+                    <li><a href="./products/garments.html">Garments</a></li>
+                    <li><a href="./products/electronics.html">Electronics</a></li>
+                </ul>
+            </div>
+            <div id="footer-div-2">
+                <ul class="footer-ul">
+                    <li><h4>CATEGORIES</h4></li>
+                    <li><a href="./products/sports.html">Sports</a></li>
+                    <li><a href="./products/garments.html">Garments</a></li>
+                    <li><a href="./products/electronics.html">Electronics</a></li>
+                </ul>
+            </div>
+            <div id="footer-div-3">
+                <h4>GET IN TOUCH</h4>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos debitis, ipsum dolor quidem similique aperiam id adipisci autem temporibus accusantium culpa molestias vero inventore praesentium sed! Distinctio eos voluptates repudiandae!</p>
+                <p><img src=""/></p>
+            </div>
+        </div>
+        <div id="footer-portion-2">
+            <p>&copy; All rights reserved at HB Developers.</p>
+        </div>
+    </div>
+    <!-- .......................footer.................................... -->
+</body>
+
+</html>
