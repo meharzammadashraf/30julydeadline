@@ -7,68 +7,120 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sports</title>
     <style>
-        .card {
-            box-shadow: 0 4px 8px 0 rgba(6, 6, 6, 0.613);
-            transition: 0.3s;
-            width: 18.99%;
+        
+
+        /* ...........cards........................................................................... */
+        figure {
+            position: relative;
             display: inline-block;
-            padding: 5px;
+            align-items: center;
+            justify-content: center;
+            margin: 5px;
+            width: 19%;
+            height: 320px;
+            border-radius: 10px;
+            box-shadow: 0 1px 3px #393f4d, 0 1px 2px #1d1e22;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            overflow: hidden;
         }
 
-        .card:hover {
-            box-shadow: 0 8px 16px 0 rgb(6, 6, 6);
+        figure:hover {
+            box-shadow: 0 14px 28px #393f4d, 0 10px 10px #1d1e22;
         }
 
-        .container {
-            padding: 2px 16px;
+        figure:hover img {
+            transform: scale(1.25);
         }
 
-        /* ............................. */
-        .section-heading {
-            box-shadow: 0 3px 3px 0 rgb(6, 6, 6);
-            padding: 15px 0px 15px 10px;
-            font-size: larger;
-            text-align: center;
-            font-size: 25px;
+        figure:hover figcaption {
+            bottom: 0;
         }
 
-        /* ............................. */
-        .cart-btn {
-            /* background-color: aqua; */
-            box-shadow: 0 3px 3px 0 rgba(241, 104, 36, 0.834);
-            padding: 10px 0px;
+        figure h1 {
+            position: absolute;
+            top: 50px;
+            left: 20px;
+            margin: 0;
+            padding: 0;
+            color: #d4d4dc;
+            font-size: 30px;
+            font-weight: 50;
+            line-height: 1;
+        }
+
+        figure img {
+            height: 100%;
             width: 100%;
+            transition: 0.25s;
+        }
+
+        figure figcaption {
+            position: absolute;
+            bottom: -73%;
+            left: 0;
+            /* width: 90%; */
+            margin: 0;
+            padding: 10px;
+            background-color: #d4d4dc;
+            box-shadow: 0 0 20px #393f4d;
+            color: #1d1e22;
+            line-height: 1;
+            transition: 0.25s;
+            overflow: hidden;
+        }
+
+        figure figcaption h3 {
+            margin: 0 0 20px;
+            padding: 0;
+        }
+
+        figure figcaption p {
+            font-size: 14px;
+            line-height: 1.75;
+            text-align: justify;
+        }
+
+        figure figcaption button {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 10px 22% 0 22%;
+            padding: 10px 30px;
+            background-color: #12343b;
             border: none;
+            border-radius: 5px;
+            color: white;
+            font-size: 14px;
         }
-
-        .cart-btn:hover {
-            box-shadow: 0 3px 3px 0 rgb(6, 6, 6);
-        }
-
-        a {
+        figure figcaption button a{
             text-decoration: none;
-            color: black;
+            color: white;
         }
 
-        /* .................................. */
-        .description {
-            text-align: center;
-        }
-
-        .allproduct:active {
-            color: red;
-        }
-
+        /* ............cards....................................................................................... */
+       
+/* ....................section heading......................................................... */
+.section-heading{
+    font-size: 25px;
+    font-weight: bold;
+    margin-left: 30px;
+    text-decoration: underline;
+}
+/* ....................section heading......................................................... */
         /* ...................navbar........................ */
         .navbar-btn {
             display: inline-block;
             margin: 15px 20px 15px 20px;
-
         }
-
+        #navbar {
+            position: sticky;
+            top: 0;
+            background-image: linear-gradient(#393f4d, #1d1e22);
+        }
         .navbar-btn a {
             text-decoration: none;
-            color: black;
+            color: #d4d4dc;
         }
 
         #navbar ul {
@@ -76,8 +128,59 @@
             box-shadow: 0 8px 16px 0 rgb(6, 6, 6);
             text-align: right;
         }
+        #navbar-logo {
+            display: inline-block;
+            margin-right: 45%;
+        }
+
+        #navbar-logo a img {
+            height: 50px;
+            margin-bottom: -20px;
+        }
 
         /* .....................navbar................................ */
+       /* .....................sub navbar................................... */
+       .allproduct {
+            display: inline-block;
+            margin-right: 80px;
+        }
+       #products-navbar li {
+            margin: 20px;
+        }
+        #products-navbar{
+            background-color: #393f4d;
+            box-shadow: 0 4px 8px 0 #1d1e22;
+        }
+        #products-navbar a{
+            text-decoration: none;
+            color: white;
+        }
+       /* .....................sub navbar................................... */
+        /* .....................footer........................................ */
+                #footer-portion-1{
+            padding: 10px 40px 5px 40px;
+            box-shadow: 0 2px 2px 0 rgb(40, 45, 45);
+        }
+        #footer-portion-2{
+            background-image: linear-gradient(#393f4d, #1d1e22);
+            padding: 5px 0px 5px 150px;
+        }
+        .footer-ul{
+            list-style: none;
+        }
+        .footer-ul a{
+            text-decoration: none;
+            color: black;
+            line-height: 37px;
+        }
+        #footer-div-1, #footer-div-2, #footer-div-3{
+            display: inline-block;
+            width: 32%;
+        }
+        #footer-div-3 p{
+            text-align: justify;
+        }
+        /* .....................footer........................................ */
     </style>
 </head>
 
@@ -86,6 +189,7 @@
         <!-- ...................navbar............................. -->
         <div id="navbar">
             <ul>
+                <li id="navbar-logo"><a href="../index.html"><img src="../images/logo.png" /></a></li>
                 <li class="navbar-btn"><a href="../index.html">Home</a></li>
                 <li class="navbar-btn"><a href="../product.html">Products</a></li>
                 <li class="navbar-btn"><a href="../contact.html">Contact us</a></li>
@@ -94,84 +198,224 @@
             </ul>
         </div>
         <!-- ...................navbar......................... -->
+        <!-- ...................sub navbar.................................... -->
+        <ul id="products-navbar">
+            <li class="allproduct"><a href="../product.html">All Products</a></li>
+            <li class="allproduct"><a href="#">Sports</a></li>
+            <li class="allproduct"><a href="./garments.html">Garments</a></li>
+            <li class="allproduct"><a href="./electronics.html">Electronics</a></li>
+        </ul>
+        <!-- ...................sub navbar.................................... -->
         <div>
             <p class="section-heading">Sports</p>
             <div>
-                <div class="card">
-                    <img src="../images/1.jpeg" alt="Avatar" style="width:100%">
-                    <div class="container">
-                        <h4 class="description"><b>Product name...</b></h4>
-                        <button class="cart-btn">Add to cart</button>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="../images/2.jpeg" alt="Avatar" style="width:100%">
-                    <div class="container">
-                        <h4 class="description"><b>Product name...</b></h4>
-                        <button class="cart-btn">Add to cart</button>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="../images/3.jpeg" alt="Avatar" style="width:100%">
-                    <div class="container">
-                        <h4 class="description"><b>Product name...</b></h4>
-                        <button class="cart-btn">Add to cart</button>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="../images/4.jpeg" alt="Avatar" style="width:100%">
-                    <div class="container">
-                        <h4 class="description"><b>Product name...</b></h4>
-                        <button class="cart-btn">Add to cart</button>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="../images/5.jpeg" alt="Avatar" style="width:100%">
-                    <div class="container">
-                        <h4 class="description"><b>Product name...</b></h4>
-                        <button class="cart-btn">Add to cart</button>
-                    </div>
-                </div>
-            </div>
-            <div>
-                <div class="card">
-                    <img src="../images/1.jpeg" alt="Avatar" style="width:100%">
-                    <div class="container">
-                        <h4 class="description"><b>Product name...</b></h4>
-                        <button class="cart-btn">Add to cart</button>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="../images/2.jpeg" alt="Avatar" style="width:100%">
-                    <div class="container">
-                        <h4 class="description"><b>Product name...</b></h4>
-                        <button class="cart-btn">Add to cart</button>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="../images/3.jpeg" alt="Avatar" style="width:100%">
-                    <div class="container">
-                        <h4 class="description"><b>Product name...</b></h4>
-                        <button class="cart-btn">Add to cart</button>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="../images/4.jpeg" alt="Avatar" style="width:100%">
-                    <div class="container">
-                        <h4 class="description"><b>Product name...</b></h4>
-                        <button class="cart-btn">Add to cart</button>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="../images/5.jpeg" alt="Avatar" style="width:100%">
-                    <div class="container">
-                        <h4 class="description"><b>Product name...</b></h4>
-                        <button class="cart-btn">Add to cart</button>
-                    </div>
-                </div>
+                <figure class="image-block">
+                    <h1>Washing Machine</h1>
+                    <img src="../images/elec1.jpg"
+                        alt="" />
+                    <figcaption>
+                        <h3>
+                            Description
+                        </h3>
+                        <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+                            Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero
+                            sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+                        <button><a href="#">Add to cart</a></button>
+                    </figcaption>
+                </figure>
+                <figure class="image-block">
+                    <h1>Clothes</h1>
+                    <img src="../images/garments2.jpg" alt="" />
+                    <figcaption>
+                        <h3>Description</h3>
+                        <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+                            Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero
+                            sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+                        <button><a href="#">Add to cart</a></button>
+                    </figcaption>
+                </figure>
+                <figure class="image-block">
+                    <h1>Clothes</h1>
+                    <img src="../images/garments3.jpg" alt="" />
+                    <figcaption>
+                        <h3>Description</h3>
+                        <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+                            Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero
+                            sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+                        <button><a href="#">Add to cart</a></button>
+                    </figcaption>
+                </figure>
+                <figure class="image-block">
+                    <h1>Shoes</h1>
+                    <img src="../images/sports1.jpg" alt="" />
+                    <figcaption>
+                        <h3>Description</h3>
+                        <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+                            Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero
+                            sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+                        <button><a href="#">Add to cart</a></button>
+                    </figcaption>
+                </figure>
+                <figure class="image-block">
+                    <h1>Sports Kit</h1>
+                    <img src="../images/sports3.jpg" alt="" />
+                    <figcaption>
+                        <h3>Description</h3>
+                        <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+                            Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero
+                            sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+                        <button><a href="#">Add to cart</a></button>
+                    </figcaption>
+                </figure>
+                <figure class="image-block">
+                    <h1>Washing Machine</h1>
+                    <img src="../images/elec1.jpg"
+                        alt="" />
+                    <figcaption>
+                        <h3>
+                            Description
+                        </h3>
+                        <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+                            Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero
+                            sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+                        <button><a href="#">Add to cart</a></button>
+                    </figcaption>
+                </figure>
+                <figure class="image-block">
+                    <h1>Clothes</h1>
+                    <img src="../images/garments2.jpg" alt="" />
+                    <figcaption>
+                        <h3>Description</h3>
+                        <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+                            Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero
+                            sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+                        <button><a href="#">Add to cart</a></button>
+                    </figcaption>
+                </figure>
+                <figure class="image-block">
+                    <h1>Clothes</h1>
+                    <img src="../images/garments3.jpg" alt="" />
+                    <figcaption>
+                        <h3>Description</h3>
+                        <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+                            Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero
+                            sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+                        <button><a href="#">Add to cart</a></button>
+                    </figcaption>
+                </figure>
+                <figure class="image-block">
+                    <h1>Shoes</h1>
+                    <img src="../images/sports1.jpg" alt="" />
+                    <figcaption>
+                        <h3>Description</h3>
+                        <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+                            Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero
+                            sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+                        <button><a href="#">Add to cart</a></button>
+                    </figcaption>
+                </figure>
+                <figure class="image-block">
+                    <h1>Sports Kit</h1>
+                    <img src="../images/sports3.jpg" alt="" />
+                    <figcaption>
+                        <h3>Description</h3>
+                        <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+                            Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero
+                            sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+                        <button><a href="#">Add to cart</a></button>
+                    </figcaption>
+                </figure>
+                <figure class="image-block">
+                    <h1>Washing Machine</h1>
+                    <img src="../images/elec1.jpg"
+                        alt="" />
+                    <figcaption>
+                        <h3>
+                            Description
+                        </h3>
+                        <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+                            Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero
+                            sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+                        <button><a href="#">Add to cart</a></button>
+                    </figcaption>
+                </figure>
+                <figure class="image-block">
+                    <h1>Clothes</h1>
+                    <img src="../images/garments2.jpg" alt="" />
+                    <figcaption>
+                        <h3>Description</h3>
+                        <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+                            Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero
+                            sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+                        <button><a href="#">Add to cart</a></button>
+                    </figcaption>
+                </figure>
+                <figure class="image-block">
+                    <h1>Clothes</h1>
+                    <img src="../images/garments3.jpg" alt="" />
+                    <figcaption>
+                        <h3>Description</h3>
+                        <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+                            Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero
+                            sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+                        <button><a href="#">Add to cart</a></button>
+                    </figcaption>
+                </figure>
+                <figure class="image-block">
+                    <h1>Shoes</h1>
+                    <img src="../images/sports1.jpg" alt="" />
+                    <figcaption>
+                        <h3>Description</h3>
+                        <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+                            Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero
+                            sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+                        <button><a href="#">Add to cart</a></button>
+                    </figcaption>
+                </figure>
+                <figure class="image-block">
+                    <h1>Sports Kit</h1>
+                    <img src="../images/sports3.jpg" alt="" />
+                    <figcaption>
+                        <h3>Description</h3>
+                        <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+                            Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero
+                            sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+                        <button><a href="#">Add to cart</a></button>
+                    </figcaption>
+                </figure>
             </div>
         </div>
     </div>
+        <!-- .......................footer.................................... -->
+        <div>
+            <div id="footer-portion-1">
+                <div id="footer-div-1">
+                    <ul class="footer-ul">
+                        <li><h4>CATEGORIES</h4></li>
+                        <li><a href="./products/sports.html">Sports</a></li>
+                        <li><a href="./products/garments.html">Garments</a></li>
+                        <li><a href="./products/electronics.html">Electronics</a></li>
+                    </ul>
+                </div>
+                <div id="footer-div-2">
+                    <ul class="footer-ul">
+                        <li><h4>CATEGORIES</h4></li>
+                        <li><a href="./products/sports.html">Sports</a></li>
+                        <li><a href="./products/garments.html">Garments</a></li>
+                        <li><a href="./products/electronics.html">Electronics</a></li>
+                    </ul>
+                </div>
+                <div id="footer-div-3">
+                    <h4>GET IN TOUCH</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos debitis, ipsum dolor quidem similique aperiam id adipisci autem temporibus accusantium culpa molestias vero inventore praesentium sed! Distinctio eos voluptates repudiandae!</p>
+                    <p><img src=""/></p>
+                </div>
+            </div>
+            <div id="footer-portion-2">
+                <p>&copy; All rights reserved at HB Developers.</p>
+            </div>
+        </div>
+        <!-- .......................footer.................................... -->
 </body>
 
 </html>

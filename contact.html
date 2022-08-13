@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,29 +8,89 @@
     <title>Contact us</title>
     <style>
         /* ................... navbar .............................. */
-        .navbar-btn{
+        .navbar-btn {
             display: inline-block;
             margin: 15px 20px 15px 20px;
-            
+
         }
-        .navbar-btn a{
+
+        .navbar-btn a {
             text-decoration: none;
-            color: black;
+            color: #d4d4dc;
         }
-        #navbar ul{
+        #navbar {
+        position: sticky;
+        top: 0;
+        background-image: linear-gradient(#393f4d, #1d1e22);
+            box-shadow: 0 4px 8px 0 #1d1e22;
+    }
+
+        #navbar ul {
             /* background-color: aqua; */
             box-shadow: 0 8px 16px 0 rgb(6, 6, 6);
             text-align: right;
         }
+        #navbar-logo {
+            display: inline-block;
+            margin-right: 45%;
+        }
+
+        #navbar-logo a img {
+            height: 50px;
+            margin-bottom: -20px;
+        }
+
         /* ...............navbar.................................. */
+                /* ...................BOX.......................................... */
+                #contact-box{
+            margin: 30px 0 20px 35%;
+            box-shadow: 0 4px 8px 0 rgb(40, 45, 45);
+            border-radius: 20px;
+            padding: 20px;
+            line-height: 30px;
+            color: #d4d4dc;
+            background-image: linear-gradient(#393f4d, #1d1e22);
+        }
+        input{
+            border-style: none;
+        }
+        /* ...................BOX.......................................... */
+        /* .....................footer........................................ */
+                #footer-portion-1{
+            padding: 10px 40px 5px 40px;
+            box-shadow: 0 2px 2px 0 rgb(40, 45, 45);
+        }
+        #footer-portion-2 {
+        background-color: #393f4d;
+        box-shadow: 0 4px 8px 0 #1d1e22;
+        padding: 5px 0px 5px 150px;
+    }
+        .footer-ul{
+            list-style: none;
+        }
+        .footer-ul a{
+            text-decoration: none;
+            color: black;
+            line-height: 37px;
+        }
+        #footer-div-1, #footer-div-2, #footer-div-3{
+            display: inline-block;
+            width: 32%;
+        }
+        #footer-div-3 p{
+            text-align: justify;
+        }
+        /* .....................footer........................................ */
     </style>
 </head>
+
 <body>
 
     <div>
         <!-- .............navbar................................. -->
         <div id="navbar">
             <ul>
+                <li id="navbar-logo"><a href="./index.html"><img src="./images/logo.png" /></a></li>
                 <li class="navbar-btn"><a href="./index.html">Home</a></li>
                 <li class="navbar-btn"><a href="./product.html">Products</a></li>
                 <li class="navbar-btn"><a href="./contact.html">Contact us</a></li>
@@ -38,29 +99,66 @@
             </ul>
         </div>
         <!-- ............navbar.................................. -->
-    <form>
-        <table>
-            <tr>
-                <th colspan="2">Contact Us</th>
-            </tr>
-            <tr>
-                <td>Name:</td>
-                <td><input type="text" placeholder="enter your name here" name="name"/></td>
-            </tr>
-            <tr>
-                <td>Email:</td>
-                <td><input type="email" placeholder="enter your email here" name="email"/></td>
-            </tr>
-            <tr>
-                <td>Message:</td>
-                <td><textarea cols="30" rows="4"></textarea></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td><button>Submit</button></td>
-            </tr>
-        </table>
-    </form>
+        <form>
+            <table id="contact-box">
+                <tr>
+                    <th colspan="2">Contact Us</th>
+                </tr>
+                <tr>
+                    <td>Name:</td>
+                    <td><input type="text" placeholder="enter your name here" name="name" /></td>
+                </tr>
+                <tr>
+                    <td>Email:</td>
+                    <td><input type="email" placeholder="enter your email here" name="email" /></td>
+                </tr>
+                <tr>
+                    <td>Message:</td>
+                    <td><textarea cols="30" rows="4"></textarea></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><button>Submit</button></td>
+                </tr>
+            </table>
+        </form>
     </div>
+    <!-- .......................footer.................................... -->
+    <div>
+        <div id="footer-portion-1">
+            <div id="footer-div-1">
+                <ul class="footer-ul">
+                    <li>
+                        <h4>CATEGORIES</h4>
+                    </li>
+                    <li><a href="./products/sports.html">Sports</a></li>
+                    <li><a href="./products/garments.html">Garments</a></li>
+                    <li><a href="./products/electronics.html">Electronics</a></li>
+                </ul>
+            </div>
+            <div id="footer-div-2">
+                <ul class="footer-ul">
+                    <li>
+                        <h4>CATEGORIES</h4>
+                    </li>
+                    <li><a href="./products/sports.html">Sports</a></li>
+                    <li><a href="./products/garments.html">Garments</a></li>
+                    <li><a href="./products/electronics.html">Electronics</a></li>
+                </ul>
+            </div>
+            <div id="footer-div-3">
+                <h4>GET IN TOUCH</h4>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos debitis, ipsum dolor quidem similique
+                    aperiam id adipisci autem temporibus accusantium culpa molestias vero inventore praesentium sed!
+                    Distinctio eos voluptates repudiandae!</p>
+                <p><img src="" /></p>
+            </div>
+        </div>
+        <div id="footer-portion-2">
+            <p>&copy; All rights reserved at HB Developers.</p>
+        </div>
+    </div>
+    <!-- .......................footer.................................... -->
 </body>
+
 </html>
